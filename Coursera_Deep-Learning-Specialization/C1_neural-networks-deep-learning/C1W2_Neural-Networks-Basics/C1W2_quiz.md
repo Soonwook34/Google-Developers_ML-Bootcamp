@@ -40,11 +40,11 @@ _**(n_x,m)**_
 ---
 
 > 7. Recall that np.dot(a,b) performs a matrix multiplication on a and b, whereas a*b performs an element-wise multiplication.
-    > Consider the two following random arrays a and b:
-    > a = np.random.randn(12288, 150) # a.shape = (12288, 150)
-    > b = np.random.randn(150, 45) # b.shape = (150, 45)
-    > c = np.dot(a,b)
-    > What is the shape of c?<br><br>
+>   > Consider the two following random arrays a and b:
+>   > a = np.random.randn(12288, 150) # a.shape = (12288, 150)
+>   > b = np.random.randn(150, 45) # b.shape = (150, 45)
+>   > c = np.dot(a,b)
+>   > What is the shape of c?<br><br>
 _**c.shape = (12288, 45)**_
 
 ---
