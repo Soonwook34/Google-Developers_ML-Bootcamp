@@ -1,27 +1,27 @@
 C1W2L01_Binary Classification
 =============
 
-고양이 분류
-1(cat) or 0(not cat)
-RGB 채널 64*64
-**n_x**(x의 차원) - 64*64*3 = 12288
-**m** - 데이터의 수
-**X** - 모든 학습 데이터, X.shape = (n_x, m)
-Y - 모든 y 데이터, Y.shape = (1, m)
+- 고양이 분류
+    - 1(cat) or 0(not cat)
+    - RGB 채널 64*64
+    - **n_x**(x의 차원) - 64*64*3 = 12288
+    - **m** - 데이터의 수
+    - **X** - 모든 학습 데이터, X.shape = (n_x, m)
+    - **Y** - 모든 y 데이터, Y.shape = (1, m)
 
 <br>
 
 C1W2L02_Logistic Regression
 =============
 
-Y의 값이 0 또는 1인 경우 사용되는 알고리즘
-**ŷ** - 예측한 y값 = P(y=1 | x)
-파라미터 w, b
-Output ŷ = σ(w^T*x + b)
-σ(z) = 1 / (1 + e^-z)
-z가 크면 e^-z는 0에 가까워진다 → 1 / 1.000... = 1에 가까워진다
-z가 작으면 e^-z는 무한 → 1 / 무한 = 0에 가까워진다
-w와 b를 따로 취급
+- Y의 값이 0 또는 1인 경우 사용되는 알고리즘
+- **ŷ** - 예측한 y값 = P(y=1 | x)
+- 파라미터 w, b
+- Output ŷ = σ(w^T*x + b)
+- σ(z) = 1 / (1 + e^-z)
+    - z가 크면 e^-z는 0에 가까워진다 → 1 / 1.000... = 1에 가까워진다
+    - z가 작으면 e^-z는 무한 → 1 / 무한 = 0에 가까워진다
+- w와 b를 따로 취급
 
 > What are the parameters of logistic regression?<br><br>
 _**W, an n_x dimensional vector, and b, a real number.**_
@@ -31,11 +31,10 @@ _**W, an n_x dimensional vector, and b, a real number.**_
 C1W2L03_Logistic Regression Cost Function
 =============
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02909275-a7fd-424d-af2e-41429200aa98/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02909275-a7fd-424d-af2e-41429200aa98/Untitled.png)
+    [그림]
 
-Loss(error) function - 예측과 실제값의 불일치 정도
-
-Cost function - 모든 훈련 데이터의 loss function의 평균
+- Loss(error) function - 예측과 실제값의 불일치 정도
+- Cost function - 모든 훈련 데이터의 loss function의 평균
 
 > What is the difference between the cost function and the loss function for logistic regression?<br><br>
 _**The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.**_
@@ -45,13 +44,10 @@ _**The loss function computes the error for a single training example; the cost 
 C1W2L04_Gradient Descent
 =============
 
-Cost function J(w, b)를 가장 작게 만드는 w, b를 찾아야한다
-
-**α** - Learning Rate
-
-초기점에서 시작해 가장 가파른 방향으로 진행
-
-w := w - α * dJ(w)/dw
+- Cost function J(w, b)를 가장 작게 만드는 w, b를 찾아야한다
+- **α** - Learning Rate
+- 초기점에서 시작해 가장 가파른 방향으로 진행
+    - w := w - α * dJ(w)/dw
 
 > True or false. A convex function always has multiple local optima.<br><br>
 _**False**_
@@ -61,28 +57,25 @@ _**False**_
 C1W2L05_Derivatives / C1W2L06_More Derivative Examples
 =============
 
-도함수
-
-f(a) = 3a
-
-a = 2 → f(a) = 6
-
-a = 2.001 → f(a) = 6.003
-
-slope (derivative) of f(a) at a=2 is 3
+- 도함수
+    f(a) = 3a
+    a = 2 → f(a) = 6
+    a = 2.001 → f(a) = 6.003
+    slope (derivative) of f(a) at a=2 is 3
 
 > On a straight line, the function's derivative...<br><br>
 _**doesn't change.**_
 
-    f(a) = a^2
+- f(a) = a^2
     a = 2 → f(a) = 4
     a = 2.001 → f(a) = 4.004...
-slope (derivative) of f(a) at a=2 is 4
+    slope (derivative) of f(a) at a=2 is 4<br>
     a = 5 → f(a) = 36
     a = 5.001 → f(a) = 4.010...
-slope (derivative) of f(a) at a=5 is 10
+    slope (derivative) of f(a) at a=5 is 10<br>
     f'(a) = 2a
-    f(a) = ln(a)
+
+- f(a) = ln(a)
     f'(a) = 1/a
 
 <br>
@@ -100,12 +93,12 @@ _**Backward**_
 - 역방향
     J = 3v → dJ/dv = 3
     v = a + u → dJ/da = 3 = dJ/dv * dv/da : Chain Rule
-    dv/da = 1
+        dv/da = 1
     d{FinalOutputVar}/d{var} → dvar (코드에서 변수명) 
     dJ/da = 3
     dJ/du = 3
-    dJ/db = dJ/du * du/db = 3 * 2 = 6
-    dJ/dc = dJ/du * du/dc = 3 * 3 = 9
+        dJ/db = dJ/du * du/db = 3 * 2 = 6
+        dJ/dc = dJ/du * du/dc = 3 * 3 = 9
 
 > In this class, what does the coding convention dvar represent?<br><br>
 _**The derivative of a final output variable with respect to various intermediate quantities.**_
@@ -196,14 +189,14 @@ print("For loop: " + str(1000 * (toc-tic)) + "ms")
 # For loop: 474.295139...ms
 ```
 
-SIMD: Single Instruction Multiple Data
-병렬 처리를 빠르게 해줌
-explicit for loop을 피하라.
+- SIMD: Single Instruction Multiple Data
+    - 병렬 처리를 빠르게 해줌
+- explicit for loop을 피하라.
 
 True or false. Vectorization cannot be done without a GPU.
 **False**
 
-**np.exp(V)**
+- **np.exp(V)**
 
 ```python
 import numpy as np
@@ -217,7 +210,7 @@ v**2
 # ...
 ```
 
-Logistic regresion derivatives
+- Logistic regresion derivatives
 
 ```python
 dw = np.zeros(n_x, 1)
@@ -230,25 +223,25 @@ dw /= m
 C1W2L13_Vectorizing Logistic Regression / C1W2L14_Vectorizing Logistic Regression's Gradient Output
 =============
 
-순방향
-Z = w^T * X + [b ... b]
-X.shape, w.shape: (n_x, m)
-→ Z = np.dot(w.t, x) + b
-b가 Broadcasting되어 (1, m)이 된다
-A = σ(Z)
+- 순방향
+- Z = w^T * X + [b ... b]
+    X.shape, w.shape: (n_x, m)
+    → Z = np.dot(w.t, x) + b
+        b가 Broadcasting되어 (1, m)이 된다
+- A = σ(Z)
 
 > What are the dimensions of matrix X in this video?<br><br>
 _**(n_x, m)**_
 
-역전파
+- 역전파
     dz = [dz1, dz2, ... , dzm]
-    dz.shape: (1, m)
+        dz.shape: (1, m)
     A = [a1, ... , am], Y = [y1, ... , ym]
     dz = A - Y
     db = (1 / m) * np.sum(dz)
     dw = (1 / m) * X * dz^T
-       = 1/m[x1*dz1 + ... + xm * dzm]
-    → (n, 1)
+        = 1/m[x1*dz1 + ... + xm * dzm]
+        → (n, 1)
 
 ```python
 Z = np.dot(w.T, X) + b
@@ -314,7 +307,7 @@ _**A rank 1 array**_
 
 Explanation of Logistic Regression Cost Function (Optional)
 =============
-???
+- ???
 
 > True or False: Minimizing the loss corresponds with maximizing logp(y|x).<br><br>
 _**True**_
