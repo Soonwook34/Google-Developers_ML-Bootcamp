@@ -1,12 +1,17 @@
 ### C1W1L01_What is Neural Network?
 
 Linear Regression
+
     ex) Housing Price Prediction
+
         size → (neuron) → price
+
         x{size, #bedrooms, zip code, wealth} → y{price}
+
     ReLU (Rectified Linear Units) - 특정 부분까지 0, 이후 일차함수로 값이 증가하는 함수
 
 > True or false? As explained in this lecture, every input layer feature is interconnected with every hidden layer feature.
+
 > _True_
 
 ---
@@ -14,21 +19,33 @@ Linear Regression
 ### C1W1L02_Supervised Learning with Neural Networks
 
 Supervised Learning
+
     예시
+
     | Input(x) | Output(y) | Application | Neural Networks |
+
     | :--- | :--- | :--- | :--- |
+
     | Home features | Price | Real Estate | Standard NN |
+
     | Ad, user info | Click on ad? (0/1) | Online Advertising | Standard NN |
+
     | Image | Object (1, ... , 1000) | Photo tagging | CNN |
+
     | Audio | Text transcript | Speech recongnition | RNN |
+
     | English | Chinese | Machine translation | RNN |
+
     | Image, Radar info | Position of other cars | Autonomous driving | Custom, Hybrid |
 
     Structured Data - Table 데이터
+
     Unstructured Data - Audio, Image, Text
+
         컴퓨터가 Unstructured Data를 이해하는데 어려웠지만, 딥러닝을 통해 가능성
         
 > Would structured or unstructured data have features such as pixel values or individual words?
+
 > _Unstructured data_
 
 ---
