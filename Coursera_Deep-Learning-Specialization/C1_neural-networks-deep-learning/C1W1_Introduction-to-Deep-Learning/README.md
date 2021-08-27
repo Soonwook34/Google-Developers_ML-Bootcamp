@@ -23,20 +23,19 @@ Supervised Learning
 예시
 
 | Input(x) | Output(y) | Application | Neural Networks |
-
-| :---: | :---: | :---: | :---: |
-
+| :-----: | :---: | :---: | :---: |
 | Home features | Price | Real Estate | Standard NN |
-
 | Ad, user info | Click on ad? (0/1) | Online Advertising | Standard NN |
-
 | Image | Object (1, ... , 1000) | Photo tagging | CNN |
-
 | Audio | Text transcript | Speech recongnition | RNN |
-
 | English | Chinese | Machine translation | RNN |
-
 | Image, Radar info | Position of other cars | Autonomous driving | Custom, Hybrid |
+
+|제목|내용|설명|
+|------|---|---|
+|테스트1|테스트2|테스트3|
+|테스트1|테스트2|테스트3|
+|테스트1|테스트2|테스트3|
 
     Structured Data - Table 데이터
 
