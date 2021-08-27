@@ -20,23 +20,23 @@ Linear Regression
 
 Supervised Learning
 
-    예시
+예시
 
-    | Input(x) | Output(y) | Application | Neural Networks |
+| Input(x) | Output(y) | Application | Neural Networks |
 
-    | :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 
-    | Home features | Price | Real Estate | Standard NN |
+| Home features | Price | Real Estate | Standard NN |
 
-    | Ad, user info | Click on ad? (0/1) | Online Advertising | Standard NN |
+| Ad, user info | Click on ad? (0/1) | Online Advertising | Standard NN |
 
-    | Image | Object (1, ... , 1000) | Photo tagging | CNN |
+| Image | Object (1, ... , 1000) | Photo tagging | CNN |
 
-    | Audio | Text transcript | Speech recongnition | RNN |
+| Audio | Text transcript | Speech recongnition | RNN |
 
-    | English | Chinese | Machine translation | RNN |
+| English | Chinese | Machine translation | RNN |
 
-    | Image, Radar info | Position of other cars | Autonomous driving | Custom, Hybrid |
+| Image, Radar info | Position of other cars | Autonomous driving | Custom, Hybrid |
 
     Structured Data - Table 데이터
 
