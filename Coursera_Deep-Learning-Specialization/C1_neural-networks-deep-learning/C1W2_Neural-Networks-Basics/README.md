@@ -9,6 +9,7 @@ RGB 채널 64*64
 **X** - 모든 학습 데이터, X.shape = (n_x, m)
 Y - 모든 y 데이터, Y.shape = (1, m)
 
+<br>
 
 C1W2L02_Logistic Regression
 =============
@@ -25,6 +26,8 @@ w와 b를 따로 취급
 > What are the parameters of logistic regression?<br><br>
 _**W, an n_x dimensional vector, and b, a real number.**_
 
+<br>
+
 C1W2L03_Logistic Regression Cost Function
 =============
 
@@ -36,6 +39,8 @@ Cost function - 모든 훈련 데이터의 loss function의 평균
 
 > What is the difference between the cost function and the loss function for logistic regression?<br><br>
 _**The loss function computes the error for a single training example; the cost function is the average of the loss functions of the entire training set.**_
+
+<br>
 
 C1W2L04_Gradient Descent
 =============
@@ -50,6 +55,8 @@ w := w - α * dJ(w)/dw
 
 > True or false. A convex function always has multiple local optima.<br><br>
 _**False**_
+
+<br>
 
 C1W2L05_Derivatives / C1W2L06_More Derivative Examples
 =============
@@ -67,39 +74,30 @@ slope (derivative) of f(a) at a=2 is 3
 > On a straight line, the function's derivative...<br><br>
 _**doesn't change.**_
 
-f(a) = a^2
-
-a = 2 → f(a) = 4
-
-a = 2.001 → f(a) = 4.004...
-
+    f(a) = a^2
+    a = 2 → f(a) = 4
+    a = 2.001 → f(a) = 4.004...
 slope (derivative) of f(a) at a=2 is 4
-
-a = 5 → f(a) = 36
-
-a = 5.001 → f(a) = 4.010...
-
+    a = 5 → f(a) = 36
+    a = 5.001 → f(a) = 4.010...
 slope (derivative) of f(a) at a=5 is 10
+    f'(a) = 2a
+    f(a) = ln(a)
+    f'(a) = 1/a
 
-f'(a) = 2a
-
-f(a) = ln(a)
-
-f'(a) = 1/a
+<br>
 
 C1W2L07_Computation Graph / C1W2L08_Derivatives with a Computation Graph
 =============
 
-J(a, b, c) = 3(a + bc)
-
-순방향
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b134cd11-aef2-451a-bcce-73c73387bc47/Untitled.png)
+- J(a, b, c) = 3(a + bc)
+- 순방향
+    [그림]
 
 > One step of ________ propagation on a computation graph yields derivative of final output variable.<br><br>
 _**Backward**_
 
-역방향
+- 역방향
     J = 3v → dJ/dv = 3
     v = a + u → dJ/da = 3 = dJ/dv * dv/da : Chain Rule
     dv/da = 1
@@ -112,19 +110,21 @@ _**Backward**_
 > In this class, what does the coding convention dvar represent?<br><br>
 _**The derivative of a final output variable with respect to various intermediate quantities.**_
 
+<br>
+
 C1W2L09_Logistic Regression Gradient Descent / C1W2L10_Gradient Descent on m Examples
 =============
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3ef14acf-66e0-4e81-9d79-a1f0e9557591/Untitled.png)
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0e1d44dd-eeb3-4220-874d-5f9e9d7e5960/Untitled.png)
+    [그림]
+    [그림]
 
     da = dL/da = -y/a + (1-y)/(1-a)
     dz = dL/dz = dL/da * da/dz = {-y/a + (1-y)/(1-a)} * a(1-a) = a - y
     dw1 = dL/dw1 = x1 * dz
     dw2 = x2 * dz
     db = dz
-값 갱신
+
+- 값 갱신
     w1 := w1 - (α * dw1)
     w2 := w2 - (α * dw2)
     b := b - (α * db)
@@ -132,9 +132,8 @@ C1W2L09_Logistic Regression Gradient Descent / C1W2L10_Gradient Descent on m Exa
 > In this video, what is the simplified formula for the derivative of the losswith respect to z?<br><br>
 _**a - y**_
 
-m개의 데이터에 대한 Logistic Regression
-
-dJ/dw1 = 1/m * sum(dw1^(i))
+- m개의 데이터에 대한 Logistic Regression
+- dJ/dw1 = 1/m * sum(dw1^(i))
 
 ```python
 J = 0, dw1 = 0, dw2 = 0, db = 0
@@ -156,19 +155,19 @@ w2 := w2 - α * dw2
 b := b - α * db
 ```
 
-for loop을 제거하기위해 Vectorization을 사용
-
-더욱 더 큰 데이터를 학습하기에 용이
+- for loop을 제거하기위해 Vectorization을 사용
+- 더욱 더 큰 데이터를 학습하기에 용이
 
 > In the for loop depicted in the video, why is there only one dw variable (i.e. no i superscripts in the for loop)?<br><br>
 _**The value of dw in the code is cumulative.**_
 
+<br>
+
 C1W2L11_Vectorization / C1W2L12_More Vectorization Examples
 =============
 
-코드에서 for loop을 제거하는 기술
-
-**np.dot(A, B)**
+- 코드에서 for loop을 제거하는 기술
+    - **np.dot(A, B)**
 
 ```python
 import numpy as np
@@ -198,9 +197,7 @@ print("For loop: " + str(1000 * (toc-tic)) + "ms")
 ```
 
 SIMD: Single Instruction Multiple Data
-
 병렬 처리를 빠르게 해줌
-
 explicit for loop을 피하라.
 
 True or false. Vectorization cannot be done without a GPU.
@@ -228,41 +225,30 @@ dw += xi * dzi
 dw /= m
 ```
 
+<br>
+
 C1W2L13_Vectorizing Logistic Regression / C1W2L14_Vectorizing Logistic Regression's Gradient Output
 =============
 
 순방향
-
 Z = w^T * X + [b ... b]
-
 X.shape, w.shape: (n_x, m)
-
 → Z = np.dot(w.t, x) + b
-
 b가 Broadcasting되어 (1, m)이 된다
-
 A = σ(Z)
 
-What are the dimensions of matrix X in this video?
-(n_x, m)
+> What are the dimensions of matrix X in this video?<br><br>
+_**(n_x, m)**_
 
 역전파
-
-dz = [dz1, dz2, ... , dzm]
-
-dz.shape: (1, m)
-
-A = [a1, ... , am], Y = [y1, ... , ym]
-
-dz = A - Y
-
-db = (1 / m) * np.sum(dz)
-
-dw = (1 / m) * X * dz^T
-
- = 1/m[x1*dz1 + ... + xm * dzm]
-
-→ (n, 1)
+    dz = [dz1, dz2, ... , dzm]
+    dz.shape: (1, m)
+    A = [a1, ... , am], Y = [y1, ... , ym]
+    dz = A - Y
+    db = (1 / m) * np.sum(dz)
+    dw = (1 / m) * X * dz^T
+       = 1/m[x1*dz1 + ... + xm * dzm]
+    → (n, 1)
 
 ```python
 Z = np.dot(w.T, X) + b
@@ -278,14 +264,15 @@ b := b - α * db
 > How do you compute the derivative of b in one line of code in Python numpy?<br><br>
 _**1 / m*(np.sum(dz))**_
 
+<br>
+
 C1W2L15_Broadcasting in Python
 =============
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/57fdaf81-51e0-4609-8180-cd995162fd65/Untitled.png)
+    [그림]
 
-A.shape: (3, 4)
-
-각 음식의 탄단지의 칼로리 비율 구하기 (without for loop)
+- A.shape: (3, 4)
+- 각 음식의 탄단지의 칼로리 비율 구하기 (without for loop)
 
 ```python
 import numpy as np
@@ -305,6 +292,8 @@ print(percentage)
 > Which of the following numpy line of code would sum the values in a matrix A vertically?<br><br>
 _**A.sum(axis = 0)**_
 
+<br>
+
 C1W2L16_A Note on Python/Numpy Vectors
 =============
 
@@ -321,9 +310,10 @@ assert(a.shape == (5, 1))
 > What kind of array has dimensions in this format: (10, ) ?<br><br>
 _**A rank 1 array**_
 
+<br>
+
 Explanation of Logistic Regression Cost Function (Optional)
 =============
-
 ???
 
 > True or False: Minimizing the loss corresponds with maximizing logp(y|x).<br><br>
