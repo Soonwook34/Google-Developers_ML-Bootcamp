@@ -7,9 +7,9 @@
 - ReLU (Rectified Linear Units) - 특정 부분까지 0, 이후 일차함수로 값이 증가하는 함수
 
 > True or false? As explained in this lecture, every input layer feature is interconnected with every hidden layer feature.<br><br>
-_True_
+_**True**_
 
-<br><br>
+<br>
 ---
 
 ### C1W1L02_Supervised Learning with Neural Networks
@@ -31,9 +31,9 @@ _True_
     - 컴퓨터가 Unstructured Data를 이해하는데 어려웠지만, 딥러닝을 통해 가능성
         
 > Would structured or unstructured data have features such as pixel values or individual words?<br><br>
-_Unstructured data_
+_**Unstructured data**_
 
-<br><br>
+<br>
 ---
 
 ### C1W1L03_Why is Deep Learning taking off?
@@ -51,4 +51,4 @@ _Unstructured data_
     - Idea → Code → "Experiement"의 주기가 빨라짐으로써 idea를 빨리 개선시킬 수 있다
 
 > What will the variable m denote in this course?<br><br>
-_Number of training examples_
+_**Number of training examples**_
