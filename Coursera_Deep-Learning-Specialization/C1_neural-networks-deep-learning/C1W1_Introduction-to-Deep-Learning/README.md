@@ -1,4 +1,5 @@
-### C1W1L01_What is Neural Network?
+C1W1L01_What is Neural Network?
+=============
 
 - Linear Regression
 - ex) Housing Price Prediction
@@ -10,9 +11,9 @@
 _**True**_
 
 <br>
----
 
-### C1W1L02_Supervised Learning with Neural Networks
+C1W1L02_Supervised Learning with Neural Networks
+=============
 
 - Supervised Learning
 - 예시
@@ -34,9 +35,9 @@ _**True**_
 _**Unstructured data**_
 
 <br>
----
 
-### C1W1L03_Why is Deep Learning taking off?
+C1W1L03_Why is Deep Learning taking off?
+=============
 
 - 더 많은 데이터를 축적함으로써 새로운 네트워크의 장점을 극대화시킬 수 있었다
 - (m) - 데이터의 수
