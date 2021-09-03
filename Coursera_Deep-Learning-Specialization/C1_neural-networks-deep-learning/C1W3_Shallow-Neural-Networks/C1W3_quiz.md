@@ -8,11 +8,11 @@ _**a^[2](12) denotes the activation vector of the 2nd layer for the 12th trainin
 _**a^[2] denotes the activation vector of the 2nd layer.**_
 
 > 2. The tanh activation is not always better than sigmoid activation function for hidden units because the mean of its output is closer to zero, and so it centers the data, making learning complex for the next layer. True/False?<br><br>
-**False**
+_**False**_
 
 > 3. Which of these is a correct vectorized implementation of forward propagation for layer ll, where 1 ≤ l ≤ L?<br><br>
-**Z^[l] = W^[l]A^l-1] + b^[l]
-A^[l] = g^[l](Z^[l])**
+_**Z^[l] = W^[l]A^l-1] + b^[l]**_
+_**A^[l] = g^[l](Z^[l])**_
 
 > 4. You are building a binary classifier for recognizing cucumbers (y=1) vs. watermelons (y=0). Which one of these activation functions would you recommend using for the output layer?<br><br>
 _**sigmoid**_
@@ -38,8 +38,6 @@ _**W^[1] will have shape (4, 2)**_<br>
 _**b^[1] will have shape (4, 1)**_<br>
 _**W^[2] will have shape (1, 4)**_<br>
 _**b^[2] will have shape (1, 1)**_
-
-(그림)
 
 > 10. In the same network as the previous question, what are the dimensions of Z^[1] and A^[1]?<br><br>
 _**Z^[1] and A^[1] are (4, m)**_
