@@ -1,4 +1,4 @@
-QUIZ
+QUIZ C1W1
 ==========
 
 > 1. What does the analogy “AI is the new electricity” refer to?<br><br>
